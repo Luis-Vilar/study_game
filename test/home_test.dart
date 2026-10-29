@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:studdy_game/app.dart';
 import 'support/test_packs.dart';
@@ -73,5 +74,64 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('570'), findsOneWidget);
+  });
+
+  testWidgets('trocar para Música mantém a prática em andamento', (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Praticar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Começar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('5'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 700));
+    expect(find.text('Pergunta 2 de 5'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Abrir menu'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Música'));
+    await tester.pumpAndSettle();
+    await tester.tapAt(const Offset(700, 400));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Pergunta 2 de 5'), findsOneWidget);
+  });
+
+  testWidgets('editar o nome do herói persiste ao fechar o drawer',
+      (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byTooltip('Abrir menu'));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextField), 'Bia');
+    await tester.pumpAndSettle();
+    await tester.tapAt(const Offset(700, 400));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Bia'), findsOneWidget);
+  });
+
+  testWidgets('no tema Games o nome do herói usa a cor de contraste',
+      (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs, initialThemeId: 'games'));
+    await tester.pumpAndSettle();
+
+    final name = tester.widget<Text>(find.text('Você'));
+    expect(name.style!.color, packs['games']!.colors.bg);
+  });
+
+  testWidgets('no tema Games os pontos aparecem como XP', (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs, initialThemeId: 'games'));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('XP'), findsWidgets);
+    expect(find.textContaining(' pts'), findsNothing);
   });
 }

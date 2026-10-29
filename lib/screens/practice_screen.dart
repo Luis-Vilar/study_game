@@ -146,7 +146,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
               const SizedBox(height: 4),
               Text(
-                '+$_score pontos',
+                '+$_score ${theme.word('points')}',
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w900,
@@ -203,6 +203,23 @@ class _PracticeScreenState extends State<PracticeScreen> {
               label: option,
               state: _stateFor(option, question),
               onTap: _answering ? null : () => _answer(option),
+            ),
+          ),
+        if (_chosen != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(
+              theme.text(
+                _chosen == question.answer
+                    ? 'practiceCorrect'
+                    : 'practiceWrong',
+              ),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w700,
+                color: theme.colors.textSecondary,
+              ),
             ),
           ),
       ],

@@ -45,7 +45,7 @@ class ClassmateTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    '${student.favoriteSubject.label} · ${student.points} pts',
+                    '${student.favoriteSubject.label} · ${student.points} ${theme.word('points')}',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(

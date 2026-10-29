@@ -80,7 +80,6 @@ class _HeroDrawerState extends State<HeroDrawer> {
             ),
             const SizedBox(height: 12),
             TextFormField(
-              key: ValueKey('hero-name-${hero.name}'),
               controller: _nameController,
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -91,6 +90,7 @@ class _HeroDrawerState extends State<HeroDrawer> {
                 isDense: true,
                 contentPadding: EdgeInsets.symmetric(vertical: 10),
               ),
+              onChanged: (value) => state.updateHero(name: value),
               onFieldSubmitted: (value) => state.updateHero(name: value),
             ),
             const SizedBox(height: 8),

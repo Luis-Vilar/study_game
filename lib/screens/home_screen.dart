@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
     final screen = DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: hasGradient ? Colors.transparent : theme.colors.bg,
+        backgroundColor: Colors.transparent,
         drawer: const HeroDrawer(),
         appBar: AppBar(
           leading: Builder(
@@ -96,18 +96,19 @@ class HomeScreen extends StatelessWidget {
       ),
     );
 
-    return hasGradient
-        ? DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: hasGradient ? null : theme.colors.bg,
+        gradient: hasGradient
+            ? LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: theme.gradient!,
-              ),
-            ),
-            child: screen,
-          )
-        : screen;
+              )
+            : null,
+      ),
+      child: screen,
+    );
   }
 }
 
@@ -172,6 +173,7 @@ class _HeroCard extends StatelessWidget {
     final state = AppScope.of(context);
     final hero = state.hero;
     final progress = (hero.points % 250) / 250;
+    final onPrimary = Theme.of(context).colorScheme.onPrimary;
 
     return Container(
       padding: const EdgeInsets.all(14),
@@ -183,7 +185,7 @@ class _HeroCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 24,
-            backgroundColor: Colors.white.withValues(alpha: 0.2),
+            backgroundColor: onPrimary.withValues(alpha: 0.2),
             child: Text(hero.emoji, style: const TextStyle(fontSize: 22)),
           ),
           const SizedBox(width: 12),
@@ -195,8 +197,8 @@ class _HeroCard extends StatelessWidget {
                   hero.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: onPrimary,
                     fontSize: 16,
                     fontWeight: FontWeight.w800,
                   ),
@@ -205,7 +207,7 @@ class _HeroCard extends StatelessWidget {
                 Text(
                   '${theme.word('level')} ${state.heroLevel} · #${state.rank}',
                   style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.8),
+                    color: onPrimary.withValues(alpha: 0.8),
                     fontSize: 11.5,
                   ),
                 ),
@@ -215,7 +217,7 @@ class _HeroCard extends StatelessWidget {
                   child: LinearProgressIndicator(
                     value: progress,
                     minHeight: 5,
-                    backgroundColor: Colors.white.withValues(alpha: 0.25),
+                    backgroundColor: onPrimary.withValues(alpha: 0.25),
                     valueColor: AlwaysStoppedAnimation<Color>(theme.colors.accent),
                   ),
                 ),

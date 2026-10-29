@@ -26,6 +26,8 @@ class _DuelScreenState extends State<DuelScreen> {
   int _secondsLeft = kSecondsPerQuestion;
   bool _answering = false;
   String? _chosen;
+  Question? _lockedQuestion;
+  int _lockedIndex = 0;
 
   @override
   void initState() {
@@ -55,6 +57,8 @@ class _DuelScreenState extends State<DuelScreen> {
     _timer?.cancel();
 
     final elapsed = (kSecondsPerQuestion - _secondsLeft) * 1000;
+    _lockedQuestion = _engine.current;
+    _lockedIndex = _engine.index;
     _engine.answer(option, elapsed);
     setState(() => _chosen = option);
 
@@ -68,6 +72,7 @@ class _DuelScreenState extends State<DuelScreen> {
         _secondsLeft = kSecondsPerQuestion;
         _chosen = null;
         _answering = false;
+        _lockedQuestion = null;
       });
       _startTimer();
     }
@@ -96,14 +101,16 @@ class _DuelScreenState extends State<DuelScreen> {
   Widget build(BuildContext context) {
     final theme = AppScope.of(context).theme;
 
-    if (_engine.finished) {
+    final locked = _lockedQuestion;
+    if (locked == null && _engine.finished) {
       return Scaffold(
         appBar: AppBar(title: Text(widget.rival.name)),
         body: const SizedBox.shrink(),
       );
     }
 
-    final question = _engine.current;
+    final question = locked ?? _engine.current;
+    final displayIndex = locked == null ? _engine.index : _lockedIndex;
     final progress = _secondsLeft / kSecondsPerQuestion;
 
     return Scaffold(
@@ -124,7 +131,7 @@ class _DuelScreenState extends State<DuelScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Pergunta ${_engine.index + 1} de ${_engine.questions.length}',
+                    'Pergunta ${displayIndex + 1} de ${_engine.questions.length}',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,

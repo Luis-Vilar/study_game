@@ -72,7 +72,7 @@ class ResultScreen extends StatelessWidget {
               ),
               const SizedBox(height: 28),
               Text(
-                '${result.correct}/${result.total} acertos · +${result.score} pts',
+                '${result.correct}/${result.total} acertos · +${result.score} ${theme.word('points')}',
                 style: TextStyle(
                   fontSize: 14,
                   color: theme.colors.textSecondary,

@@ -52,4 +52,25 @@ void main() {
 
     expect(find.text('Studdy FC'), findsOneWidget);
   });
+
+  testWidgets('a última resposta mostra feedback antes do resultado',
+      (tester) async {
+    await _openDuel(tester);
+    for (final answer in ['5', '8', '42', '8']) {
+      await tester.tap(find.text(answer));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 700));
+    }
+    expect(find.text('Pergunta 5 de 5'), findsOneWidget);
+
+    await tester.tap(find.text('15'));
+    await tester.pump();
+
+    expect(find.text('Pergunta 5 de 5'), findsOneWidget);
+    expect(find.text('15'), findsWidgets);
+
+    await tester.pump(const Duration(milliseconds: 700));
+    await tester.pumpAndSettle();
+    expect(find.text('Voltar aos duelos'), findsOneWidget);
+  });
 }
