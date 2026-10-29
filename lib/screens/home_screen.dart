@@ -7,6 +7,7 @@ import '../widgets/challenge_sheet.dart';
 import '../widgets/classmate_tile.dart';
 import '../widgets/hero_drawer.dart';
 import '../widgets/points_bar.dart';
+import '../screens/practice_screen.dart';
 import 'duel_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -86,7 +87,7 @@ class HomeScreen extends StatelessWidget {
               child: TabBarView(
                 children: [
                   _DuelList(theme: theme),
-                  _PracticeTabPlaceholder(theme: theme),
+                  const PracticeScreen(),
                 ],
               ),
             ),
@@ -222,22 +223,6 @@ class _HeroCard extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _PracticeTabPlaceholder extends StatelessWidget {
-  const _PracticeTabPlaceholder({required this.theme});
-
-  final ThemePack theme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        theme.word('practice'),
-        style: TextStyle(color: theme.colors.textSecondary),
       ),
     );
   }

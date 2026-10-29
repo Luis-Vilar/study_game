@@ -43,4 +43,35 @@ void main() {
     expect(find.text('História'), findsOneWidget);
     expect(find.text('Ciências'), findsOneWidget);
   });
+
+  testWidgets('praticar tem botão de começar', (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Praticar'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Começar'), findsOneWidget);
+  });
+
+  testWidgets('praticar soma 250 pontos ao acertar as 5', (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Praticar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Começar'));
+    await tester.pumpAndSettle();
+
+    for (final answer in ['5', '1822', 'Célula', '42', 'Pau-brasil']) {
+      await tester.tap(find.text(answer));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 700));
+    }
+    await tester.pumpAndSettle();
+
+    expect(find.text('570'), findsOneWidget);
+  });
 }

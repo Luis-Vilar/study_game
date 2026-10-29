@@ -159,3 +159,11 @@ const List<Question> kQuestions = [
 
 List<Question> questionsFor(Subject subject) =>
     kQuestions.where((q) => q.subject == subject).toList();
+
+/// Set fijo de la práctica solo: cinco materias mezcladas.
+List<Question> practiceSet() {
+  const ids = ['m1', 'h1', 'c1', 'm3', 'h3'];
+  return [
+    for (final id in ids) kQuestions.firstWhere((q) => q.id == id),
+  ];
+}
