@@ -1,0 +1,47 @@
+{
+  "id": "games",
+  "name": "Games",
+  "appTitle": "STUDDY.EXE",
+  "tagline": "Suba de nível estudando",
+  "fontFamily": "mono",
+  "uppercaseLabels": true,
+  "radius": 8,
+  "colors": {
+    "bg": "#0F1117",
+    "surface": "#151A25",
+    "surfaceAlt": "#1F2A3A",
+    "primary": "#00E5A0",
+    "accent": "#4FE3FF",
+    "textPrimary": "#D7FFEF",
+    "textSecondary": "#57708A"
+  },
+  "gradient": null,
+  "icons": {
+    "duel": "🎮",
+    "practice": "👾",
+    "points": "✨",
+    "streak": "🔥",
+    "hero": "🕹️",
+    "challenge": "⚔️"
+  },
+  "words": {
+    "classmates": "JOGADORES",
+    "challenge": "RETAR",
+    "points": "XP",
+    "streak": "COMBO",
+    "practice": "TREINAR",
+    "level": "NÍVEL",
+    "subject": "MATÉRIA"
+  },
+  "copy": {
+    "duelWin": "VITÓRIA! Você subiu de nível.",
+    "duelLose": "GAME OVER. Tenta de novo?",
+    "duelTie": "EMPATE. Ninguém ganhou XP extra.",
+    "practiceCorrect": "COMBO! Continua.",
+    "practiceWrong": "ERROU. Vamos revisar?",
+    "practiceDone": "Fase concluída!",
+    "drawerTitle": "Seu personagem",
+    "resultTitle": "Fim da partida"
+  },
+  "prompts": {}
+}

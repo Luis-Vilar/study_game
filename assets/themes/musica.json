@@ -1,0 +1,47 @@
+{
+  "id": "musica",
+  "name": "Música",
+  "appTitle": "Studdy FM",
+  "tagline": "Aprenda no ritmo",
+  "fontFamily": "sans",
+  "uppercaseLabels": false,
+  "radius": 20,
+  "colors": {
+    "bg": "#170F2B",
+    "surface": "#2B1B4D",
+    "surfaceAlt": "#3A2A63",
+    "primary": "#8F5BFF",
+    "accent": "#FF4FD8",
+    "textPrimary": "#F2ECFF",
+    "textSecondary": "#9D8FC4"
+  },
+  "gradient": ["#2B1B4D", "#170F2B"],
+  "icons": {
+    "duel": "🎧",
+    "practice": "🎹",
+    "points": "🎵",
+    "streak": "🔥",
+    "hero": "🦸",
+    "challenge": "⚡"
+  },
+  "words": {
+    "classmates": "PLAYLIST",
+    "challenge": "DESAFIAR",
+    "points": "PONTOS",
+    "streak": "FAIXAS",
+    "practice": "ENSAIAR",
+    "level": "NÍVEL",
+    "subject": "MATÉRIA"
+  },
+  "copy": {
+    "duelWin": "Show lotado! Você venceu.",
+    "duelLose": "Faltou um acorde. Tenta de novo?",
+    "duelTie": "Empate no palco!",
+    "practiceCorrect": "No tom certo!",
+    "practiceWrong": "Desafinou. Vamos revisar?",
+    "practiceDone": "Show concluído!",
+    "drawerTitle": "Seu artista",
+    "resultTitle": "Fim da apresentação"
+  },
+  "prompts": {}
+}

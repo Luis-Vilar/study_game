@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:studdy_game/data/theme_packs.dart';
 import 'package:studdy_game/models/theme_pack.dart';
 
 Map<String, dynamic> jsonDecodeMap(String source) =>
@@ -21,6 +22,14 @@ void main() {
     expect(pack.word('challenge'), 'RETAR');
     expect(pack.text('duelWin'), isNotEmpty);
     expect(pack.isDark, isFalse);
+  });
+
+  test('os três packs carregam dos assets', () async {
+    final packs = await loadThemePacks(rootBundle);
+    expect(packs.keys, containsAll(['futebol', 'musica', 'games']));
+    expect(packs['musica']!.isDark, isTrue);
+    expect(packs['games']!.fontFamily, 'mono');
+    expect(packs['games']!.appTitle, 'STUDDY.EXE');
   });
 
   test('promptFor cai no fallback quando o pack não tem o enunciado', () {
