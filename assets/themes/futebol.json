@@ -1,0 +1,47 @@
+{
+  "id": "futebol",
+  "name": "Futebol",
+  "appTitle": "Studdy FC",
+  "tagline": "Aprenda em campo",
+  "fontFamily": "sans",
+  "uppercaseLabels": true,
+  "radius": 14,
+  "colors": {
+    "bg": "#F4FBF0",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#E4F1DC",
+    "primary": "#0B6E3A",
+    "accent": "#C6F432",
+    "textPrimary": "#10261A",
+    "textSecondary": "#4B6B57"
+  },
+  "gradient": null,
+  "icons": {
+    "duel": "⚽",
+    "practice": "🏃",
+    "points": "⚽",
+    "streak": "🔥",
+    "hero": "🦸",
+    "challenge": "⚔️"
+  },
+  "words": {
+    "classmates": "RIVAIS",
+    "challenge": "RETAR",
+    "points": "PONTOS",
+    "streak": "PARTIDAS",
+    "practice": "TREINAR",
+    "level": "NÍVEL",
+    "subject": "MATÉRIA"
+  },
+  "copy": {
+    "duelWin": "Você venceu o duelo!",
+    "duelLose": "Perdeu por pouco. Tenta de novo?",
+    "duelTie": "Empate! Ninguém cedeu.",
+    "practiceCorrect": "Boa! Mais uma?",
+    "practiceWrong": "Quase. Vamos revisar?",
+    "practiceDone": "Treino concluído!",
+    "drawerTitle": "Seu herói",
+    "resultTitle": "Fim do duelo"
+  },
+  "prompts": {}
+}
