@@ -1,0 +1,66 @@
+{
+  "id": "musica",
+  "name": "Música",
+  "appTitle": "Studdy FM",
+  "tagline": "Aprenda no ritmo",
+  "fontFamily": "sans",
+  "uppercaseLabels": false,
+  "radius": 20,
+  "colors": {
+    "bg": "#170F2B",
+    "surface": "#2B1B4D",
+    "surfaceAlt": "#3A2A63",
+    "primary": "#8F5BFF",
+    "accent": "#FF4FD8",
+    "textPrimary": "#F2ECFF",
+    "textSecondary": "#9D8FC4"
+  },
+  "gradient": ["#2B1B4D", "#170F2B"],
+  "icons": {
+    "duel": "🎧",
+    "practice": "🎹",
+    "points": "🎵",
+    "streak": "🔥",
+    "hero": "🦸",
+    "challenge": "⚡"
+  },
+  "words": {
+    "classmates": "PLAYLIST",
+    "challenge": "DESAFIAR",
+    "points": "PONTOS",
+    "streak": "FAIXAS",
+    "practice": "ENSAIAR",
+    "level": "NÍVEL",
+    "subject": "MATÉRIA"
+  },
+  "copy": {
+    "duelWin": "Show lotado! Você venceu.",
+    "duelLose": "Faltou um acorde. Tenta de novo?",
+    "duelTie": "Empate no palco!",
+    "practiceCorrect": "No tom certo!",
+    "practiceWrong": "Desafinou. Vamos revisar?",
+    "practiceDone": "Show concluído!",
+    "drawerTitle": "Seu artista",
+    "resultTitle": "Fim da apresentação"
+  },
+  "prompts": {
+    "m1": "A banda tocou 3 músicas no primeiro show e 2 no segundo. Quantas no total?",
+    "m2": "A playlist tinha 14 faixas e 6 saíram. Quantas ficaram?",
+    "m3": "Foram 7 shows com 6 faixas cada. Quantas faixas na turnê?",
+    "m4": "48 fãs foram divididos em 6 grupos iguais. Quantos por grupo?",
+    "m5": "A banda gravou 20 faixas e 3/4 já estão prontas. Quantas estão prontas?",
+    "m6": "O show tem 200 ingressos e 15% já foram vendidos. Quantos foram vendidos?",
+    "h1": "No estúdio, o produtor perguntou: em que ano o Brasil proclamou sua independência?",
+    "h2": "Na letra da música: quem foi o primeiro imperador do Brasil?",
+    "h3": "No intervalo do ensaio: qual foi o primeiro produto explorado no Brasil colonial?",
+    "h4": "Na rádio, o locutor lembrou: o que a Lei Áurea, de 1888, aboliu?",
+    "h5": "No refrão da música: qual movimento pediu eleições diretas em 1984?",
+    "h6": "No podcast da banda: em que ano começou a ditadura militar no Brasil?",
+    "c1": "Na letra da música: qual é a menor unidade viva dos seres vivos?",
+    "c2": "No clipe, o vocalista canta: qual gás as plantas absorvem na fotossíntese?",
+    "c3": "No estúdio, o produtor perguntou: qual órgão bombeia o sangue pelo corpo?",
+    "c4": "Na turnê, o guitarrista perguntou: qual é o planeta mais próximo do Sol?",
+    "c5": "No documentário da banda: qual é a principal função das mitocôndrias?",
+    "c6": "No camarim, alguém perguntou: qual é a fórmula química da água?"
+  }
+}
