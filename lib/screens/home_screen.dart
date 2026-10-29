@@ -121,7 +121,7 @@ class _DuelList extends StatelessWidget {
     return ListView.separated(
       padding: const EdgeInsets.fromLTRB(12, 4, 12, 24),
       itemCount: ranked.length + 2,
-      separatorBuilder: (_, __) => const SizedBox(height: 8),
+      separatorBuilder: (_, _) => const SizedBox(height: 8),
       itemBuilder: (context, index) {
         if (index == 0) return _HeroCard(theme: theme);
         if (index == 1) {
