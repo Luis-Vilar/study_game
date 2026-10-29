@@ -30,4 +30,17 @@ void main() {
     expect(find.text('STUDDY.EXE'), findsOneWidget);
     expect(find.text('320'), findsWidgets);
   });
+
+  testWidgets('desafiar abre a folha com as três matérias', (tester) async {
+    final packs = await loadTestPacks();
+    await tester.pumpWidget(StuddyApp(packs: packs));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('RETAR').first);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Matemática'), findsOneWidget);
+    expect(find.text('História'), findsOneWidget);
+    expect(find.text('Ciências'), findsOneWidget);
+  });
 }

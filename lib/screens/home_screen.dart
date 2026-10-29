@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../models/theme_pack.dart';
 import '../state/app_scope.dart';
+import '../models/student.dart';
+import '../widgets/challenge_sheet.dart';
 import '../widgets/classmate_tile.dart';
 import '../widgets/hero_drawer.dart';
 import '../widgets/points_bar.dart';
+import 'duel_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -139,10 +142,23 @@ class _DuelList extends StatelessWidget {
           );
         }
         final student = ranked[index - 2];
-        return ClassmateTile(student: student, onChallenge: () {});
+        return ClassmateTile(
+          student: student,
+          onChallenge: () => _challenge(context, student),
+        );
       },
     );
   }
+}
+
+Future<void> _challenge(BuildContext context, Student rival) async {
+  final subject = await ChallengeSheet.show(context, rival);
+  if (subject == null || !context.mounted) return;
+  await Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => DuelScreen(rival: rival, subject: subject),
+    ),
+  );
 }
 
 class _HeroCard extends StatelessWidget {
