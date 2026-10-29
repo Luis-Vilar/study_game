@@ -1,19 +1,16 @@
 import 'dart:convert';
+import 'dart:ui';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:studdy_game/data/theme_packs.dart';
+import 'support/test_packs.dart';
 import 'package:studdy_game/models/theme_pack.dart';
 
 Map<String, dynamic> jsonDecodeMap(String source) =>
     jsonDecode(source) as Map<String, dynamic>;
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   test('futebol.json vira ThemePack completo', () async {
-    final raw = await rootBundle.loadString('assets/themes/futebol.json');
-    final pack = ThemePack.fromJson(jsonDecodeMap(raw));
+    final pack = (await loadTestPacks())['futebol']!;
 
     expect(pack.id, 'futebol');
     expect(pack.appTitle, 'Studdy FC');
@@ -24,7 +21,7 @@ void main() {
   });
 
   test('os três packs carregam dos assets', () async {
-    final packs = await loadThemePacks(rootBundle);
+    final packs = await loadTestPacks();
     expect(packs.keys, containsAll(['futebol', 'musica', 'games']));
     expect(packs['musica']!.isDark, isTrue);
     expect(packs['games']!.fontFamily, 'mono');

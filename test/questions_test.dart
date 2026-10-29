@@ -1,14 +1,11 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:studdy_game/data/questions.dart';
-import 'package:studdy_game/data/theme_packs.dart';
+import 'support/test_packs.dart';
 import 'package:studdy_game/models/question.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   test('todo pack tem enunciado para as 18 perguntas', () async {
-    final packs = await loadThemePacks(rootBundle);
+    final packs = await loadTestPacks();
     for (final pack in packs.values) {
       for (final q in kQuestions) {
         expect(
@@ -21,7 +18,7 @@ void main() {
   });
 
   test('os números do enunciado base aparecem em todos os temas', () async {
-    final packs = await loadThemePacks(rootBundle);
+    final packs = await loadTestPacks();
     for (final q in kQuestions) {
       final numbers =
           RegExp(r'\d+').allMatches(q.basePrompt).map((m) => m[0]!).toList();

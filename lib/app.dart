@@ -27,12 +27,6 @@ class _StuddyAppState extends State<StuddyApp> {
   );
 
   @override
-  void dispose() {
-    _state.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return AppScope(
       state: _state,
