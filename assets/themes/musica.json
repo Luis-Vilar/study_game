@@ -43,5 +43,24 @@
     "drawerTitle": "Seu artista",
     "resultTitle": "Fim da apresentação"
   },
-  "prompts": {}
+  "prompts": {
+    "m1": "A banda tocou 3 músicas no primeiro show e 2 no segundo. Quantas no total?",
+    "m2": "A playlist tinha 14 faixas e 6 saíram. Quantas ficaram?",
+    "m3": "Foram 7 shows com 6 faixas cada. Quantas faixas na turnê?",
+    "m4": "48 fãs foram divididos em 6 grupos iguais. Quantos por grupo?",
+    "m5": "A banda gravou 20 faixas e 3/4 já estão prontas. Quantas estão prontas?",
+    "m6": "O show tem 200 ingressos e 15% já foram vendidos. Quantos foram vendidos?",
+    "h1": "No estúdio, o produtor perguntou: em que ano o Brasil proclamou sua independência?",
+    "h2": "Na letra da música: quem foi o primeiro imperador do Brasil?",
+    "h3": "No intervalo do ensaio: qual foi o primeiro produto explorado no Brasil colonial?",
+    "h4": "Na rádio, o locutor lembrou: o que a Lei Áurea, de 1888, aboliu?",
+    "h5": "No refrão da música: qual movimento pediu eleições diretas em 1984?",
+    "h6": "No podcast da banda: em que ano começou a ditadura militar no Brasil?",
+    "c1": "Na letra da música: qual é a menor unidade viva dos seres vivos?",
+    "c2": "No clipe, o vocalista canta: qual gás as plantas absorvem na fotossíntese?",
+    "c3": "No estúdio, o produtor perguntou: qual órgão bombeia o sangue pelo corpo?",
+    "c4": "Na turnê, o guitarrista perguntou: qual é o planeta mais próximo do Sol?",
+    "c5": "No documentário da banda: qual é a principal função das mitocôndrias?",
+    "c6": "No camarim, alguém perguntou: qual é a fórmula química da água?"
+  }
 }

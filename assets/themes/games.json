@@ -43,5 +43,24 @@
     "drawerTitle": "Seu personagem",
     "resultTitle": "Fim da partida"
   },
-  "prompts": {}
+  "prompts": {
+    "m1": "Você coletou 3 moedas na fase 1 e 2 na fase 2. Quantas ao todo?",
+    "m2": "Você tinha 14 vidas e perdeu 6. Quantas restam?",
+    "m3": "Foram 7 fases com 6 moedas cada. Quantas moedas no total?",
+    "m4": "48 moedas foram divididas em 6 baús iguais. Quantas por baú?",
+    "m5": "A fase tem 20 moedas e você pegou 3/4 delas. Quantas pegou?",
+    "m6": "O mapa tem 200 moedas e 15% são raras. Quantas são raras?",
+    "h1": "No tutorial, o NPC perguntou: em que ano o Brasil proclamou sua independência?",
+    "h2": "No loading, a dica dizia: quem foi o primeiro imperador do Brasil?",
+    "h3": "Na missão secundária: qual foi o primeiro produto explorado no Brasil colonial?",
+    "h4": "No pergaminho do jogo: o que a Lei Áurea, de 1888, aboliu?",
+    "h5": "No diálogo do NPC: qual movimento pediu eleições diretas em 1984?",
+    "h6": "Na linha do tempo do jogo: em que ano começou a ditadura militar no Brasil?",
+    "c1": "No bestiário do jogo: qual é a menor unidade viva dos seres vivos?",
+    "c2": "Na missão da estufa: qual gás as plantas absorvem na fotossíntese?",
+    "c3": "No mapa do corpo: qual órgão bombeia o sangue pelo corpo?",
+    "c4": "No mapa estelar: qual é o planeta mais próximo do Sol?",
+    "c5": "Na descrição do item: qual é a principal função das mitocôndrias?",
+    "c6": "Na receita do alquimista: qual é a fórmula química da água?"
+  }
 }
